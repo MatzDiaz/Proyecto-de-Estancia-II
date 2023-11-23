@@ -58,7 +58,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Multimedia (Arrastra y suelta imágenes aquí):</label>
-                <input type="file" class="form-control" id="multimedia" name="imagen" multiple accept="image/*" >
+                <input type="file" class="form-control" id="multimedia" name="multimedia" multiple accept="image/*" >
             </div>
             <input type="hidden" id="fecha" name="fecha" value="<?php echo date('Y-m-d H:i:s'); ?>">
             <button type="submit" class="btn btn-primary">Publicar</button>
@@ -213,11 +213,12 @@
             </div>
         </form>
         <!-- Modal editar -->
-        <form action="../CONTROLADOR/controlador_EliCoor.php" method="POST">
+        <form action="../CONTROLADOR/controlador_ModiRec.php" method="POST" enctype="multipart/form-data">
             <div class="modal fade" id="mdEditar<?=$datos->idRec?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
+                        <input type="text" id="titulo" name="idrec" value="<?=$datos->idRec?>" hidden>
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevos datos</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -232,7 +233,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Multimedia (Arrastra y suelta imágenes aquí):</label>
-                            <input type="file" class="form-control" id="multimedia" name="imagen" multiple accept="image/*" required>
+                            <input type="file" class="form-control" id="multimedia" name="multimedia" multiple accept="multimedia" >
                         </div>
                     </div>
                     <div class="modal-footer">

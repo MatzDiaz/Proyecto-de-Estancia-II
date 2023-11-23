@@ -44,12 +44,12 @@
                 <br>
                 <li class="nav-item">
                     <a class="navbar-brand" aria-current="page" href="administrarAlum.php"><img src="../../../IMG/grupo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                    Gestion de alumnos</a>
+                    Gesti&oacute;n de alumnos</a>
                 </li>
                 <br>
                 <li class="nav-item">
                 <a class="navbar-brand" aria-current="page" href="administrarCoor.php"><img src="../../../IMG/grupo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                    Gestion de coordinadores</a>
+                    Gesti&oacute;n de coordinadores</a>
                 </li>
                 <br>
                 <li class="nav-item">
@@ -59,12 +59,12 @@
                 <br>
                 <li class="nav-item">
                 <a class="navbar-brand" aria-current="page" href="encuesta.php"><img src="../../../IMG/lista.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                    Gestion de encuestas</a>
+                    Gesti&oacute;n de encuestas</a>
                 </li> 
                 <br>
                 <li class="nav-item">
-                <a class="navbar-brand" aria-current="page" href="#"><img src="../../../IMG/estadistica.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                    Estadisticos</a>
+                <a class="navbar-brand" aria-current="page" href="estadisticos.php"><img src="../../../IMG/estadistica.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    Estad&iacute;sticos</a>
                 </li>
                 <br>
                 <li class="nav-item">

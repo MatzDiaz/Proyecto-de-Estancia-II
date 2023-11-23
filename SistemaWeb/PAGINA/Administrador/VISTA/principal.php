@@ -38,7 +38,7 @@
         $id = $row['idAlum'];
         //consulta para mostrar recetas
         $sql = ("SELECT idRec, Titulo, FechaPub, Contenido, Multimedia, Nombre 
-        FROM receta INNER JOIN alumno on receta.idAlum = alumno.idAlum");
+        FROM receta INNER JOIN alumno on receta.idAlum = alumno.idAlum WHERE Estatus = 1");
         $consulta = mysqli_query($enlace, $sql);
         while($datos=$consulta->fetch_object()) {?>
         <div class="container mt-4  border mt-3 p-3">

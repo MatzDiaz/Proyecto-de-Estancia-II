@@ -17,9 +17,9 @@
             <th scope="col">NOMBRE</th>
             <th scope="col">APELLIDO</th>
             <th scope="col">CORREO</th>
-            <th scope="col">CONTRASENA</th>
+            <th scope="col">CONTRASEÑA</th>
             <th scope="col">FECHA DE NACIMIENTO</th>
-            <th scope="col">GENERO</th>
+            <th scope="col">GÉNERO</th>
             <th scope="col"></th>
             </tr>
         </thead>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="modal-body">
                       <input type="text" class="form-control" id="correo" name="correo" value="<?= $datos->Correo?>" hidden >
-                        <p>Desea eliminar al alumno <?=$datos->Nombre?> definitivamente</p>
+                        <p>¿Desea eliminar al alumno <?=$datos->Nombre?> definitivamente?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Regresar</button>
