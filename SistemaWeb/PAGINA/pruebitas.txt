@@ -1,0 +1,20 @@
+<form action="../CONTROLADOR/controlador_inicios.php" method="POST" >
+                    <div class="mb-4">
+                        <label for="email" class="form-label" placeholder="user123@dominio.com" >Correo electronico</label>
+                        <input type="email" class="form-email" name="email" oninput="validarEmail(this);" onblur="validarEmail(this);" required autofocus>
+                        <div class="invalid-feedback" id="emailFeedback"></div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Contrase&ntilde;a</label>
+                        <input type="password" class="form-password" name="password" oninput="validarPassword(this);" onblur="validarPassword(this);" required>
+                        <div class="invalid-feedback" id="passwordFeedback"></div>
+                    </div>
+                    <div class="d-grid">
+                        <center><button type="submit" class="btn btn-primary btn-rounded w-50">Iniciar sesion</button>
+                    </div>
+                    <div class="my-3">
+                        <center><p>¿No tienes una cuenta?<a href="../VISTA/registro.php">Registrarse</a></p><br>
+                    </div>
+                </form>
+
+
