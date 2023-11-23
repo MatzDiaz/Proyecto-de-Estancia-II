@@ -1,5 +1,5 @@
 <?php 
-//    session_start();
+    session_start();
     include 'controlador_conexion.php';
 
     $corre = $_SESSION['usuario'];

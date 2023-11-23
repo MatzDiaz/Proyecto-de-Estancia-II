@@ -13,7 +13,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 DROP DATABASE IF EXISTS `sistemaweb`;
 CREATE SCHEMA IF NOT EXISTS `sistemaweb` DEFAULT CHARACTER SET utf8 ;
-USE `sistemaweb` ;
+USE `sistemaweb` ; 
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Alumno`
@@ -48,11 +48,11 @@ CREATE TABLE IF NOT EXISTS `sistemaweb`.`Asignar` (
   `idEnc` INT NULL,
   PRIMARY KEY (`idAsig`),
     FOREIGN KEY (`idEnc`)
-    REFERENCES `mydb`.`Encuesta` (`idEnc`)
+    REFERENCES `sistemaweb`.`Encuesta` (`idEnc`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
     FOREIGN KEY (`idAlum`)
-    REFERENCES `mydb`.`Alumno` (`idAlum`)
+    REFERENCES `sistemaweb`.`Alumno` (`idAlum`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -85,11 +85,7 @@ CREATE TABLE IF NOT EXISTS `sistemaweb`.`Receta` (
   `idAlum` INT NOT NULL,
   PRIMARY KEY (`idRec`),
     FOREIGN KEY (`idAlum`)
-    REFERENCES `mydb`.`Alumno` (`idAlum`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-    FOREIGN KEY (`Estatus`)
-    REFERENCES `mydb`.`Coordinador` (`idCoor`)
+    REFERENCES `sistemaweb`.`Alumno` (`idAlum`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB; 	
@@ -104,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `sistemaweb`.`Respuesta` (
   `idAsig` INT NULL,
   PRIMARY KEY (`idRes`),
     FOREIGN KEY (`idAsig`)
-    REFERENCES `mydb`.`Asignar` (`idAsig`)
+    REFERENCES `sistemaweb`.`Asignar` (`idAsig`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -119,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `sistemaweb`.`Comentario` (
   `idRec` INT NOT NULL,
   PRIMARY KEY (`idCom`),
     FOREIGN KEY (`idRec`)
-    REFERENCES `mydb`.`Receta` (`idRec`)
+    REFERENCES `sistemaweb`.`Receta` (`idRec`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
