@@ -5,14 +5,14 @@ include 'controlador_conexion.php';
 $correo = $_POST['email']; 
 $pass = $_POST['password'];
 
-$stmt = mysqli_prepare($enlace, "SELECT correo, contra FROM alumno WHERE correo = ?");
+$stmt = mysqli_prepare($enlace, "SELECT cor, Password FROM coordinador WHERE cor = ?");
 mysqli_stmt_bind_param($stmt, "s", $correo);
 mysqli_stmt_execute($stmt);
 
 $resultado = mysqli_stmt_get_result($stmt);
 
 if ($row = mysqli_fetch_assoc($resultado)) { //verifica que el correo exista
-    $passEncry = $row['contra'];
+    $passEncry = $row['Password'];
 
     echo "$pass"." "."$passEncry";
 

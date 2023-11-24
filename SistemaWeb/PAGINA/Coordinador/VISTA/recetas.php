@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'headerC.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,12 +83,12 @@
         include '../CONTROLADOR/controlador_conexion.php';
         //obtener el id
         $correo = $_SESSION['usuario'];
-        $sql = "SELECT idAlum FROM alumno WHERE correo = '$correo';";
+        $sql = "SELECT idCoor FROM coordinador WHERE cor = '$correo';";
         $result = mysqli_query($enlace, $sql);
         $row = mysqli_fetch_assoc($result);
-        $id = $row['idAlum'];
+        $id = $row['idCoor'];
         //consulta para mostrar recetas
-        $sql = ("SELECT idRec, Titulo, FechaPub, Contenido, Multimedia, Nombre 
+        $sql = ("SELECT idRec, Titulo, FechaPub, Contenido, Multimedia, alumno 
         FROM receta INNER JOIN alumno on receta.idAlum = alumno.idAlum WHERE receta.idAlum = $id");
         $consulta = mysqli_query($enlace, $sql);
         while($datos=$consulta->fetch_object()) {?>

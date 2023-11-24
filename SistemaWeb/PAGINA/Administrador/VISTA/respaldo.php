@@ -20,17 +20,23 @@
                 </form>
             </div>
         </div> 
-        <form action="../CONTROLADOR/controlador_restauracion.php" method="post" enctype="multipart/form-data">
-            <div class="row mt-5">
+        
+        <div class="container mt-5">
+            <div class="row">
                 <div class="col-12">
-                    <h1>Restaurar Base de Datos</h1>
+                    <h1 class="mb-4">Restaurar Base de Datos</h1>
+                    <form action="../CONTROLADOR/controlador_restauracion.php" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="archivo" class="form-label">Selecciona un archivo SQL:</label>
+                            <input type="file" class="form-control" id="archivo" name="archivo" accept=".sql">
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" class="btn btn-primary" value="Restaurar Base de Datos">
+                        </div>
+                    </form>
                 </div>
             </div>
-            <label for="archivo">Selecciona un archivo SQL:</label>
-            <input type="file" name="archivo" id="archivo" accept=".sql">
-            <br>
-            <input type="submit" value="Restaurar Base de Datos">
-        </form>
+        </div>
 
         <div class="row mt-3">
             <div class="col-12">

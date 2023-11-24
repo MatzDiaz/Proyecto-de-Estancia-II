@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Estad&iacute;sticos</title>
+    <title>Estadísticos</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+      //graficas de alumnos
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
@@ -33,23 +34,20 @@
 
     var data = google.visualization.arrayToDataTable([
     ['City', ' respuestas',],
-    ['Muy insatisfecho', <?=$mysatis?>],
-    ['insatisfecho', 5],
-    ['Neutral', 10],
-    ['Satisfecho', 50],
-    ['Muy satisfecho', 20]
+    ['Muy insatisfecho',<?=$muyin?> ],
+    ['insatisfecho',<?=$insatisfecho?> ],
+    ['Neutral', <?=$neutro?>],
+    ['Satisfecho', <?=$satisfecho?>],
+    ['Muy satisfecho', <?=$muysat?>]
     ]);
 
     var options = {
-    title: 'Grado de satisfacció  n de los alumnos',
+    title: 'Grado de satisfacción de los alumnos',
     chartArea: {width: '50%'},
     hAxis: {
         title: 'Total de respuestas',
         minValue: 0
     },
-    vAxis: {
-        title: 'City'
-    }
     };
 
     var chart = new google.visualization.BarChart(document.getElementById('chart_div'));

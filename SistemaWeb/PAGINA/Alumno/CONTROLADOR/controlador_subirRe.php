@@ -4,7 +4,6 @@ include 'controlador_conexion.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cont = $_POST['contenido'];
-    $idRec = $_POST['idrec'];
     $cadenaBR = nl2br($cont);
     
     $titulo = $_POST['titulo'];
@@ -34,18 +33,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     //echo "$titulo $cont $id " . date('Y-m-d H:i:s');
-    /*$query = "INSERT INTO receta (Titulo, Contenido, Multimedia, FechaPub, idAlum, Estatus)
-              VALUES ('$titulo', '$cadenaBR', '$archivo', NOW(), '$id', 0);";*/
-
-    $query = "UPDATE receta SET Titulo = '$titulo', Contenido = '$cadenaBR', Multimedia = '$archivo'
-     ,FechaPub = now() WHERE idRec = '$idRec'";
+    $query = "INSERT INTO receta (Titulo, Contenido, Multimedia, FechaPub, idAlum, Estatus)
+              VALUES ('$titulo', '$cadenaBR', '$archivo', NOW(), '$id', 0);";
 
     $execute = mysqli_query($enlace, $query);
     if ($execute) {
-       echo '<script>alert("Receta actualizada con exito");
+       echo '<script>alert("Receta publicada con exito");
             window.location = "../VISTA/recetas.php";</script>';
     } else {
-       echo '<script>alert("Error al actualizar la receta, inténtelo de nuevo");
+        echo '<script>alert("Error al publicar la receta, inténtelo de nuevo");
             window.location = "../VISTA/recetas.php";</script>';
     }
     mysqli_close($enlace);

@@ -1,4 +1,4 @@
-<?php include 'header.php' ?>
+<?php include 'headerC.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,11 +72,11 @@
                 <div class="mb-3">
                     <label for="satisfaccion" class="form-label">¿Qué tan satisfecho estás con nuestro servicio?</label>
                     <select class="form-select" name="nivel_satisfaccion" aria-label="Nivel de Satisfacción">
-                        <option value="1">Muy Insatisfecho</option>
-                        <option value="2">Insatisfecho</option>
-                        <option value="3">Neutral</option>
-                        <option value="4">Satisfecho</option>
-                        <option value="5">Muy Satisfecho</option>
+                        <option value="Muy Insatisfecho">Muy Insatisfecho</option>
+                        <option value="Insatisfecho">Insatisfecho</option>
+                        <option value="Neutral">Neutral</option>
+                        <option value="Satisfecho">Satisfecho</option>
+                        <option value="Muy Satisfecho">Muy Satisfecho</option>
                     </select>
                 </div>
 

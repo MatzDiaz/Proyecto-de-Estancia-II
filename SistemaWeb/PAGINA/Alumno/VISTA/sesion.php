@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,23 +24,29 @@
 </head>
 <body>
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <div class="container w-85 bg-primary mt-5 rounded shadow">
+    <div class="container w-85 bg-primary mt-5 rounded shadow jusrify-items-center">
         <div class="row align-items-stretch">
             <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
             </div>
             <div class="col bg-white pd-5 rounded-end">
             <div class="container">
-                <div class="row">
-                        <div class="col-12 text-right">
-                            <img src="../../../IMG/logo.png" class="logo" width="50">
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center pd-top-5">
-                    <img src="../../../IMG/logo.png" width="70">
+                <div class="text-center pd-top-25">
+                    <img src="../../../IMG/Logo.png" width="150">
                 </div>
                 <h2 class="fw-bold text-center py-5">Bienvenidos a <i>noncore</i></h2>
                 <!--inicio-->
+                <div class="btn-group mx-auto d-flex justify-items-center w-50">
+                    <button type="button" class="btn btn-primary bg-white text-black">Usuario</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../../Administrador/VISTA/sesion.php">Administrador</a></li>
+                        <li><a class="dropdown-item" href="../../Coordinador/VISTA/sesion.php">Coordinador</a></li>
+                        <li><a class="dropdown-item" href="../../Alumno/VISTA/sesion.php">Alumno</a></li>
+                        <!-- Puedes agregar más opciones según sea necesario -->
+                    </ul>
+                </div>
                 <form action="../CONTROLADOR/controlador_inicios.php" method="POST">
                     <div class="mb-4">
                         <label for="email" class="form-label">Correo electrónico</label>
@@ -55,15 +62,16 @@
 
                     <div class="mb- 4 d-flex justify-content-center align-items-center">
                         <button type="submit" class="btn btn-primary btn-rounded w-50">Iniciar sesión</button>
-                    </div>
-                    
+                    </div>  
                     <div class="my-3">
-                        <p class="text-center">¿No tienes una cuenta? <a href="../VISTA/registro.php">Registrarse</a></p>
+                        <p class="text-center">¿No tienes una cuenta? <a href="registro.php">Registrarse</a></p>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
     function validarEmail(emailInput) {
         var email = emailInput.value;

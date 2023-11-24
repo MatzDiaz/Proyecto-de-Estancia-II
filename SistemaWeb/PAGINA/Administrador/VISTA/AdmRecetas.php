@@ -1,4 +1,4 @@
-<?php include 'headerA.php'; ?>
+<?php include 'header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,9 +25,40 @@
         .custom-form .form-control {
             padding: 5px 10px;
         }
+
+        .rating {
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        }
+
+        .star {
+        display: inline-block;
+        font-size: 24px;
+        cursor: pointer;
+        }
+
+        .star:hover,
+        .star.active {
+        color: orange;
+        }
     </style>
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const multimediaInput = document.getElementById('multimedia');
+        
+        multimediaInput.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
+        multimediaInput.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const files = e.dataTransfer.files;
+        });
+    </script>
+
+    <!--Obtener las recetas-->
     <?php   
         include '../CONTROLADOR/controlador_conexion.php';
         //obtener el id
@@ -38,7 +69,7 @@
         $id = $row['idAlum'];
         //consulta para mostrar recetas
         $sql = ("SELECT idRec, Titulo, FechaPub, Contenido, Multimedia, Nombre 
-        FROM receta INNER JOIN alumno on receta.idAlum = alumno.idAlum WHERE Estatus = 1");
+        FROM receta INNER JOIN alumno on receta.idAlum = alumno.idAlum WHERE estatus = 0");
         $consulta = mysqli_query($enlace, $sql);
         while($datos=$consulta->fetch_object()) {?>
         <div class="container mt-4  border mt-3 p-3">
@@ -47,6 +78,12 @@
         <input name="recet" value="<?=$datos->idRec?>" hidden></input>
         <div class="col-6">
             <?="<h2>$datos->Nombre</h2>";?>
+        </div>
+        <!-- Menú de tres puntos -->
+        <div class="col-6 text-end">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary bg-white text-black" data-bs-toggle="modal" data-bs-target="#mdEliminar<?=$datos->idRec?>">Aceptar</button>
+            </div>
         </div>
     </div>
 
@@ -72,11 +109,13 @@
         </div>
     </div>
 
+    <!--Parte de la imagen-->
     <div class="row mt-2">
         <div class="col-8">
             <img src="<?= $datos->Multimedia ?>" alt="Imagen de la publicación" class="img-fluid">
         </div>
         <div class="col-4">
+            <!--Comentarios-->
             <p>Comentarios</p>
             <?php 
                 $idReceta = $datos->idRec;
@@ -107,6 +146,7 @@
             <!-- Botón de comentar -->
             <form action="../CONTROLADOR/controlador_subCom.php" method="POST">
                 <input type="text" name="comentario"></input>
+                <input name="receta" hidden value="<?=$datos->idRec?>"></input>
                 <button type="submit" class="btn btn-primary bg-info">Agregar</button>
             </form>    
         </div>
@@ -117,11 +157,62 @@
             <!-- Opción para calificar -->
             <div class="d-flex align-items-center">
                 <p class="me-2">Calificar:</p>
+                <div class="rating">
+                <span class="star" data-rating="1">&#9733;</span>
+                <span class="star" data-rating="2">&#9733;</span>
+                <span class="star" data-rating="3">&#9733;</span>
+                <span class="star" data-rating="4">&#9733;</span>
+                <span class="star" data-rating="5">&#9733;</span>
+                <input type="hidden" name="rating-value" id="rating-value" value="0">
+                </div>
             </div>
-            
         </div>
     </div>
 </div>
+
+    <!-- Modal eliminar -->
+    <form action="../CONTROLADOR/controlador_AcepReceta.php" method="POST">
+            <div class="modal fade" id="mdEliminar<?=$datos->idRec?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmaci&oacute;n</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control" id="receta" name="receta" value="<?= $datos->idRec?>" hidden>
+                        <p>Desea publicar la receta <?=$datos->Titulo?> </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Regresar</button>
+                        <button type="submit" class="btn btn-primary bg-success" name="btnEliminar">Aceptar</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- Modal editar -->
     <?php }?>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const stars = document.querySelectorAll(".star");
+        const ratingValue = document.getElementById("rating-value");
+
+        stars.forEach((star) => {
+            star.addEventListener("click", function () {
+            const rating = this.getAttribute("data-rating");
+            ratingValue.value = rating;
+
+            stars.forEach((s) => {
+                if (s.getAttribute("data-rating") <= rating) {
+                s.classList.add("active");
+                } else {
+                s.classList.remove("active");
+                }
+            });
+            });
+        });
+        });
+    </script>
 </body>
 </html>

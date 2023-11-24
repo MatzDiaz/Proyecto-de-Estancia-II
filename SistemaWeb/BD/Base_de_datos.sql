@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS `sistemaweb`.`Asignar` (
     ON UPDATE NO ACTION,
     FOREIGN KEY (`idAlum`)
     REFERENCES `sistemaweb`.`Alumno` (`idAlum`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE SET NULL
+    ON UPDATE ON CASCADE)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -86,8 +86,8 @@ CREATE TABLE IF NOT EXISTS `sistemaweb`.`Receta` (
   PRIMARY KEY (`idRec`),
     FOREIGN KEY (`idAlum`)
     REFERENCES `sistemaweb`.`Alumno` (`idAlum`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE SET NULL
+    ON UPDATE ON CASCADE)
 ENGINE = InnoDB; 	
 
 -- -----------------------------------------------------
@@ -101,8 +101,8 @@ CREATE TABLE IF NOT EXISTS `sistemaweb`.`Respuesta` (
   PRIMARY KEY (`idRes`),
     FOREIGN KEY (`idAsig`)
     REFERENCES `sistemaweb`.`Asignar` (`idAsig`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE SET NULL
+    ON UPDATE ON CASCADE)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -116,8 +116,8 @@ CREATE TABLE IF NOT EXISTS `sistemaweb`.`Comentario` (
   PRIMARY KEY (`idCom`),
     FOREIGN KEY (`idRec`)
     REFERENCES `sistemaweb`.`Receta` (`idRec`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE SET NULL
+    ON UPDATE ON CASCADE)
 ENGINE = InnoDB;
 
 

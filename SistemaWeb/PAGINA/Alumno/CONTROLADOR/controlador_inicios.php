@@ -14,8 +14,11 @@ $resultado = mysqli_stmt_get_result($stmt);
 if ($row = mysqli_fetch_assoc($resultado)) { //verifica que el correo exista
     $passEncry = $row['contra'];
 
+    echo "$pass"." "."$passEncry";
+
     if (password_verify($pass, $passEncry)) { //se utiliza para verificar que las password sean idénticas
         $_SESSION['usuario'] = $correo;
+        $_SESSION['loggin'] = true;
         header("Location: ../VISTA/principal.php");
         exit();
     }
