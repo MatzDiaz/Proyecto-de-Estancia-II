@@ -12,7 +12,7 @@
 
         $sql = "SELECT idAlum, nombre, apellido, fechaNa, correo, genero FROM alumno WHERE correo = '$correo'";
         $result = $enlace->query($sql);
-
+        $idA = 0;
         if ($result->num_rows > 0) {
             while ($data = $result->fetch_assoc()) {
                 echo "<p>ID: " . $data['idAlum'] . "</p>";
@@ -21,6 +21,7 @@
                 echo "<p>Correo: " . $data['correo'] . "</p>";
                 echo "<p>Fecha de Nacimiento: " . $data['fechaNa'] . "</p>";
                 echo "<p>Género: " . $data['genero'] . "</p>";
+                $idA = $data['idAlum'];
             }
         } else {
             echo "<p>No se encontraron resultados para el correo: $correo</p>";
@@ -28,8 +29,8 @@
         $enlace->close();
     }
     ?>
-    <form action="controlador_asignar.php" method="POST">
-        <input value="<?=$data['idAlum']?>" name="idAlum" hidden></input>
+    <form action="../CONTROLADOR/controlador_asignar.php" method="POST">
+        <input value="<?=$idA?>" name="idAlum" hidden></input>
         <button type="submit" class="btn btn-primary bg-info">Asignar encuesta</button>
     </form>
 </div>

@@ -28,6 +28,17 @@
                 <div class="mb-3">
                     <label for="satisfaccion" class="form-label">¿Qué tan satisfecho estás con nuestro servicio?</label>
                     <select class="form-select" name="nivel_satisfaccion" aria-label="Nivel de Satisfacción">
+                        <option value="1">Muy Insatisfecho</option>
+                        <option value="2">Insatisfecho</option>
+                        <option value="3">Neutral</option>
+                        <option value="4">Satisfecho</option>
+                        <option value="5">Muy Satisfecho</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="satisfaccion" class="form-label">¿Qué tan satisfecho estás con nuestro servicio?</label>
+                    <select class="form-select" name="recomendacion" aria-label="Nivel de Satisfacción">
                         <option value="Muy Insatisfecho">Muy Insatisfecho</option>
                         <option value="Insatisfecho">Insatisfecho</option>
                         <option value="Neutral">Neutral</option>
@@ -38,7 +49,7 @@
 
                 <div class="mb-3">
                     <label for="satisfaccion" class="form-label">¿Qué tan satisfecho estás con nuestro servicio?</label>
-                    <select class="form-select" name="nivel_satisfaccion" aria-label="Nivel de Satisfacción">
+                    <select class="form-select" name="accesibilidad" aria-label="Nivel de Satisfacción">
                         <option value="Muy Insatisfecho">Muy Insatisfecho</option>
                         <option value="Insatisfecho">Insatisfecho</option>
                         <option value="Neutral">Neutral</option>
@@ -49,7 +60,7 @@
 
                 <div class="mb-3">
                     <label for="satisfaccion" class="form-label">¿Qué tan satisfecho estás con nuestro servicio?</label>
-                    <select class="form-select" name="nivel_satisfaccion" aria-label="Nivel de Satisfacción">
+                    <select class="form-select" name="facilidad" aria-label="Nivel de Satisfacción">
                         <option value="Muy Insatisfecho">Muy Insatisfecho</option>
                         <option value="Insatisfecho">Insatisfecho</option>
                         <option value="Neutral">Neutral</option>
@@ -60,18 +71,7 @@
 
                 <div class="mb-3">
                     <label for="satisfaccion" class="form-label">¿Qué tan satisfecho estás con nuestro servicio?</label>
-                    <select class="form-select" name="nivel_satisfaccion" aria-label="Nivel de Satisfacción">
-                        <option value="Muy Insatisfecho">Muy Insatisfecho</option>
-                        <option value="Insatisfecho">Insatisfecho</option>
-                        <option value="Neutral">Neutral</option>
-                        <option value="Satisfecho">Satisfecho</option>
-                        <option value="Muy Satisfecho">Muy Satisfecho</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="satisfaccion" class="form-label">¿Qué tan satisfecho estás con nuestro servicio?</label>
-                    <select class="form-select" name="nivel_satisfaccion" aria-label="Nivel de Satisfacción">
+                    <select class="form-select" name="mejora" aria-label="Nivel de Satisfacción">
                         <option value="1">Muy Insatisfecho</option>
                         <option value="2">Insatisfecho</option>
                         <option value="3">Neutral</option>

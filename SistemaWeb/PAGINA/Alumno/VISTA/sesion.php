@@ -10,12 +10,12 @@
     <link type="text/css" rel="stylesheet" src="../CSS/styles.css">
     <style>
     body{
-        background: #ffe259;
-        background: linear-gradient(to right, #ffa751, #ffe259);
+        background: rgb(51, 255, 181);
         font-family: 'Times New Roman', Times, serif;
     }
 
     .bg{
+        background: rgb(51, 255, 181);
         background-image: url(../../../IMG/descargar.jpg);
         background-position: center center;
         background-repeat: no-repeat;
@@ -31,7 +31,7 @@
             <div class="col bg-white pd-5 rounded-end">
             <div class="container">
                 <div class="text-center pd-top-25">
-                    <img src="../../../IMG/Logo.png" width="150">
+                    <img src="../../../IMG/logo.png" width="150">
                 </div>
                 <h2 class="fw-bold text-center py-5">Bienvenidos a <i>noncore</i></h2>
                 <!--inicio-->

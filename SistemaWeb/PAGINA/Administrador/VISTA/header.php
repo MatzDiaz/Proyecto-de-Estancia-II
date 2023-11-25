@@ -28,7 +28,7 @@
         </button>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">noncore</h5>
+        <img src="../../../IMG/logo.png" alt="Logo" width="40" height="30" class="d-inline-block"><h5 class="offcanvas-title" id="offcanvasNavbarLabel">noncore</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -55,7 +55,7 @@
                 </li>
                 <br>
                 <li class="nav-item">
-                <a class="navbar-brand" aria-current="page" href="encuesta.php"><img src="../../../IMG/lista.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <a class="navbar-brand" aria-current="page" href="encuesta.php"><img src="../../../IMG/aceptar.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                     Gesti&oacute;n de encuestas</a>
                 </li> 
                 <br>

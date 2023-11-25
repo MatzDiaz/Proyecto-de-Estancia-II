@@ -4,6 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['archivo']) && $_FILES
 
     $archivo_nombre = $_FILES['archivo']['name'];
     $archivo_tmp = $_FILES['archivo']['tmp_name'];
+
     $sql = file_get_contents($archivo_tmp);
 
     if ($enlace->multi_query($sql) === TRUE) {
@@ -14,4 +15,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['archivo']) && $_FILES
 
     $enlace->close();
 }
+
 ?>
